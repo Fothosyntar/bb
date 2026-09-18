@@ -19,21 +19,14 @@
  
 ---
  
-## Índice
- 
-1. [Sesión 2: Intermitencia y Capacitores](#1-sesión-2-intermitencia-y-capacitores)
-2. [Sesión 3: Conexión inalámbrica y microcontrolador ESP32](#2-sesión-3-conexión-inalámbrica-y-microcontrolador-esp32)
-3. [Sesión 4: Motor DC y Servo](#3-sesión-4-motor-dc-y-servo)
- 
----
- 
 ## 1. Sesión 2: Intermitencia y Capacitores
  
-| Campo | Detalle |
-|:---|:---|
-| **Fecha** | 28 de agosto del 2026 |
-| **Autora** | Carmen Leyva López |
-| **Asignatura** | Introducción a la mecatrónica |
+| Campo | Detalle ||
+|-----------:|:-----:|-------------|
+| **Fecha**  |  28 de agosto del 2026   | |
+| **Autora**     | Carmen Leyva López     | |
+|**Asignatura** |Introducción a la mecatrónica
+
  
 ### 1.1 Descripción
  
@@ -42,7 +35,7 @@ Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conex
 ### 1.2 Evidencia audiovisual
  [Video.1](https://www.youtube.com/embed/1JN5oAWgr-M)
   <em>Funcionamiento del circuito parpadeante.</em>
-</div>
+
  
 ### 1.3 Evidencia fotográfica
  
