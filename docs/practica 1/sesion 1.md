@@ -13,16 +13,14 @@
 >
 > Mi intención con esta bitácora es documentar los avances, retos y aprendizajes obtenidos a lo largo de la carrera.
 
-<div align="center">
-  <img src="../recursos/imgs/me.jpg" alt="Foto de Carmen" width="200" style="border-radius: 8px;">
-</div>
+![Foto de Carmen](../recursos/imgs/me.jpg)
 
 ---
 
 ## 1. Sesión 2: Intermitencia y Capacitores
 
 | Campo | Detalle |
-|:---|:---|
+| :--- | :--- |
 | **Fecha** | 28 de agosto del 2026 |
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
@@ -37,19 +35,17 @@ Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conex
 
 ### 1.3 Evidencia fotográfica
 
-<p align="center">
-  <img src="../recursos/imgs/led1.jpg" alt="Montaje en protoboard" width="250">
-  <img src="../recursos/imgs/led2.jpg" alt="LED parpadeando" width="250">
-  <br>
-  <em>Figura 1. Montaje en protoboard y LED parpadeando.</em>
-</p>
+![Montaje en protoboard](../recursos/imgs/led1.jpg)
+![LED parpadeando](../recursos/imgs/led2.jpg)
+
+*Figura 1. Montaje en protoboard y LED parpadeando.*
 
 ---
 
 ## 2. Sesión 3: Conexión inalámbrica y microcontrolador ESP32
 
 | Campo | Detalle |
-|:---|:---|
+| :--- | :--- |
 | **Fecha** | 4 de septiembre del 2026 |
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
@@ -64,19 +60,17 @@ Usamos el microcontrolador ESP32 para programar la intermitencia de unos leds y 
 
 ### 2.3 Evidencia fotográfica
 
-<p align="center">
-  <img src="../recursos/imgs/blo.jpg" alt="Montaje en protoboard" width="200">
-  <img src="../recursos/imgs/blo1.jpg" alt="LED parpadeando" width="300">
-  <br>
-  <em>Figura 2. Montaje en protoboard y LED parpadeando.</em>
-</p>
+![Montaje en protoboard](../recursos/imgs/blo.jpg)
+![LED parpadeando](../recursos/imgs/blo1.jpg)
+
+*Figura 2. Montaje en protoboard y LED parpadeando.*
 
 ---
 
 ## 3. Sesión 4: Motor DC y Servo
 
 | Campo | Detalle |
-|:---|:---|
+| :--- | :--- |
 | **Fecha** | 11 de septiembre del 2026 |
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
@@ -87,8 +81,6 @@ Los motores de DC son dispositivos que generan movimiento mecánico mediante la 
 
 ### 3.2 Evidencia fotográfica
 
-<p align="center">
-  <img src="../recursos/imgs/DC.jpg" alt="Montaje en protoboard" width="300">
-  <br>
-  <em>Figura 3. Montaje del motor DC en protoboard.</em>
-</p>
+![Montaje del motor DC en protoboard](../recursos/imgs/DC.jpg)
+
+*Figura 3. Montaje del motor DC en protoboard.*
