@@ -82,6 +82,12 @@ git push -u origin main
 
 Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conexión del LM3909. Evaluamos cómo la variación en voltaje afecta directamente el tiempo de parpadeo y, por consiguiente, la intensidad de luz del led.
 
+Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La amplitud de la onda indica el voltaje aplicado, mientras que la distancia horizontal entre pulsos (periodo) permite calcular la frecuencia de parpadeo. El brillo del LED no se lee directamente en el osciloscopio, pero se puede inferir a partir de la corriente y del ciclo de trabajo: a mayor ciclo de trabajo o corriente, mayor intensidad luminosa.
+
+##Referencia visual:
+![Osciloscopio](../recursos/imgs/osil.png.jpg)
+![Osciloscopio2](../recursos/imgs/osil2.png.jpg)
+
 ### 1.2 Evidencia audiovisual
 
 [Video 1: Funcionamiento del circuito parpadeante](https://www.youtube.com/embed/1JN5oAWgr-M)
