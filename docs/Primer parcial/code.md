@@ -26,15 +26,15 @@ Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde
 ### 1. Inicializar el repositorio local
 
 ```bash
-git init
+git clone
 ```
 
 ---
 
-### 2. Cambiar la rama principal a `main`
+### 2. Descargar la carpeta de archivos 
 
 ```bash
-git branch -M main
+ls
 ```
 
 ---
@@ -58,7 +58,7 @@ git commit -m "Primera versión de la bitácora universitaria"
 ### 5. Subir los archivos por primera vez a GitHub
 
 ```bash
-git push -u origin main
+git push 
 ```
 
 ---
@@ -87,7 +87,7 @@ Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La ampli
 Referencia visual:
 
 ![Osciloscopio](../recursos/imgs/osil.png)
-![Osciloscopio2](../recursos/imgs/osil2.png)
+![Osciloscopio2](../recursos/imgs/osili.png)
 
 ### 1.2 Evidencia audiovisual
 
@@ -137,10 +137,87 @@ Usamos el microcontrolador ESP32 para programar la intermitencia de unos leds y 
 
 ### 3.1 Descripción
 
-Los motores de DC son dispositivos que generan movimiento mecánico mediante la interacción de campos magnéticos. Durante la sesión vimos que estos dispositivos consumen una gran cantidad de corriente, por lo que para proporcionarles suficiente y controlarlos mediante un microcontrolador se necesitan un relé o transistores y un chip L2930, este último para invertir la rotación como queramos, utilizando el código.
+En esta sesión programamos el control de un robot con dos motores DC y un servomotor usando Arduino. Los motores DC se manejan a través de un puente H (L293D/L298N), usando los pines 6 y 7 para el primer motor y los pines 3 y 4 para el segundo. Los pines 5 y 2 se configuran como habilitadores y se colocan en `HIGH` para permitir el giro de los motores. El servomotor se conecta al pin 9 y se controla con la librería `Servo.h`.
+
+Definimos cuatro funciones (`adelante()`, `atras()`, `der()` e `izq()`) que establecen los estados de los pines para que el robot se desplace en cada dirección. Observamos que los motores DC consumen mucha corriente, por lo que requieren una fuente externa y un puente H para invertir su rotación sin dañar el microcontrolador. También comprobamos que los nombres de las funciones `der()` e `izq()` dependen del montaje físico de los motores, por lo que conviene verificarlos antes de usarlos.
+
+### 4.2 Código utilizado
+
+```cpp
+// Incluye la librería para controlar servomotores
+#include <Servo.h>
+
+// Crea un objeto servo llamado "eus"
+Servo eus;
+
+// Función para avanzar: ambos motores giran hacia adelante
+void adelante() {
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, LOW);
+}
+
+// Función para retroceder: ambos motores giran hacia atrás
+void atras() {
+  digitalWrite(7, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, LOW);
+}
+
+// Función para girar a la derecha
+void der() {
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, LOW);
+}
+
+// Función para girar a la izquierda
+void izq() {
+  digitalWrite(7, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, LOW);
+}
+
+void setup() {
+  // El servo está conectado al pin 9
+  eus.attach(9);
+
+  // --- Motor 1 ---
+  pinMode(6, OUTPUT);    // out1
+  pinMode(7, OUTPUT);    // out2
+  pinMode(5, OUTPUT);    // enable del motor 1
+  digitalWrite(5, HIGH); // habilita el motor 1
+
+  // --- Motor 2 ---
+  pinMode(4, OUTPUT);    // out1
+  pinMode(3, OUTPUT);    // out2
+  pinMode(2, OUTPUT);    // enable del motor 2
+  digitalWrite(2, HIGH); // habilita el motor 2
+}
+
+void loop() {
+  // Mueve el servo a 0°, espera 1 segundo
+  eus.write(0);
+  delay(1000);
+
+  // Mueve el servo a 90°, espera 1 segundo
+  eus.write(90);
+  delay(1000);
+
+  // Mueve el servo a 180°, espera 1 segundo
+  eus.write(180);
+  delay(1000);
+}
+```
 
 ### 3.2 Evidencia fotográfica
 
 ![Montaje del motor DC en protoboard](../recursos/imgs/DC.jpg)
+*Figura 3. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio*
 
-*Figura 3. Montaje del motor DC en protoboard.*
+![Montaje completo](../recursos/imgs/circuito.png)
+*Figura 3. Ensamble completo de los dos motores DC y un servo.*
