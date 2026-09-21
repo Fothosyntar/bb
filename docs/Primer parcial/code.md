@@ -13,22 +13,7 @@
 >
 > Mi intención con esta bitácora es documentar los avances, retos y aprendizajes obtenidos a lo largo de la carrera.
 
-<div align="center">
-  <img src="../recursos/imgs/me.jpg" alt="Foto de Carmen" width="220">
-  <br>
-  <em>Figura 1. Retrato de la autora.</em>
-</div>
-
----
-
-## Índice
-
-1. [Inicialización del repositorio y publicación en GitHub](#1-inicialización-del-repositorio-y-publicación-en-github)
-2. [Sesión 2: Intermitencia y Capacitores](#2-sesión-2-intermitencia-y-capacitores)
-3. [Sesión 3: Conexión inalámbrica y microcontrolador ESP32](#3-sesión-3-conexión-inalámbrica-y-microcontrolador-esp32)
-4. [Sesión 4: Motor DC y Servo](#4-sesión-4-motor-dc-y-servo)
-5. [Sesión 5: Mecanismos](#5-sesión-5-mecanismos)
-
+![Foto de Carmen](../recursos/imgs/me.jpg)
 ---
 
 ## 1. Inicialización del repositorio y publicación en GitHub
@@ -90,20 +75,13 @@ Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La ampli
 
 ### 2.2 Referencia visual (intervalos cortos)
 
-<div align="center">
-  <img src="../recursos/imgs/osil.png" alt="Osciloscopio" width="400">
-  <br>
-  <em>Figura 2. Registro del osciloscopio.</em>
-</div>
+![Osciloscopio](../recursos/imgs/osil.png)
 
 ### 2.3 Evidencia del ensamble
 
-<div align="center">
-  <img src="../recursos/imgs/led1.jpg" alt="Montaje en protoboard" width="250">
-  <img src="../recursos/imgs/led2.jpg" alt="LED parpadeando" width="250">
-  <br>
-  <em>Figura 3. Montaje en protoboard y LED parpadeando.</em>
-</div>
+![Montaje en protoboard](../recursos/imgs/led1.jpg)
+![LED parpadeando](../recursos/imgs/led2.jpg)
+
 
 ---
 
@@ -162,11 +140,7 @@ void loop() {
 
 ### 3.4 Evidencia fotográfica
 
-<div align="center">
-  <img src="../recursos/imgs/blo.jpg" alt="Montaje en protoboard" width="300">
-  <br>
-  <em>Figura 4. Montaje en protoboard.</em>
-</div>
+![Montaje en protoboard](../recursos/imgs/blo.jpg)
 
 ---
 
@@ -259,17 +233,12 @@ void loop() {
 
 ### 4.3 Evidencia fotográfica
 
-<div align="center">
-  <img src="../recursos/imgs/DC.jpg" alt="Montaje del motor DC en protoboard" width="300">
-  <br>
-  <em>Figura 5. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio.</em>
-</div>
+![Montaje del motor DC en protoboard](../recursos/imgs/DC.jpg)
+*Figura 3. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio*
 
-<div align="center">
-  <img src="../recursos/imgs/circuito.png" alt="Montaje completo" width="400">
-  <br>
-  <em>Figura 6. Ensamble completo de los dos motores DC y un servo.</em>
-</div>
+
+![Montaje completo](../recursos/imgs/circuito.png)
+*Figura 4. Ensamble completo de los dos motores DC y un servo.*
 
 ---
 
@@ -292,9 +261,7 @@ Los motores DC giran rápido y con poca fuerza. Por eso los mecanismos permiten 
 
 **Fórmula:**
 
-<div align="center">
-  <img src="../recursos/imgs/fórmula.png" alt="Fórmula" width="300">
-</div>
+![Formula](../recursos/imgs/fórmula.png)
 
 ### 5.3 Taller
 
@@ -313,23 +280,9 @@ Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el meca
 
 ### 5.4 Evidencia
 
-<div align="center">
-  <img src="../recursos/imgs/spiral.png" alt="Mecanismos impresos en 3D" width="400">
-  <br>
-  <em>Figura 7. Estaciones con mecanismos impresos en 3D.</em>
-</div>
+![Mecanismos impresos en 3D](../recursos/imgs/spiral.png)
+
+
+*Figura 7. Estaciones con mecanismos impresos en 3D.*
 
 ---
-```
-
----
-
-## 📋 Cambios de organización aplicados a las viñetas
-
-| Sección | Antes | Después |
-|:---|:---|:---|
-| **3.2 Observaciones** | 3 viñetas con `-` sin jerarquía | **Lista numerada** con **título en negrita** por cada punto, facilitando la lectura y referencia |
-| **5.2 Conceptos clave** | 2 viñetas con `-` | **Lista numerada** para darles orden secuencial explícito |
-| **Tabla 5.3** | Filas sin agrupación visual | Encabezados en negrita + columnas alineadas (ya estaban bien, se mantiene) |
-| **Índice** | Ausente en versiones previas | Añadido con enlaces internos |
-| **Jerarquía numérica** | Saltos (`7.2`, `3.1` en sesión 4, etc.) | Reenumerada secuencialmente por sesión |
