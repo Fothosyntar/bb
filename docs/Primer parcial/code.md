@@ -110,20 +110,52 @@ Referencia visual:
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
 
-### 2.1 Descripción
+### 3.2 Código utilizado
 
-Usamos el microcontrolador ESP32 para programar la intermitencia de unos leds y probar el monitor serial mediante un botón. Al final logramos conectarlo vía Bluetooth a nuestro celular y mandar directamente la señal de encendido y apagado sin necesidad de ningún botón.
+```cpp
+#include <BTAddress.h>
+#include <BTAdvertisedDevice.h>
+#include <BTScan.h>
+#include <BluetoothSerial.h>
+
+BluetoothSerial Mi_tel;
+
+void setup() {
+  Mi_tel.begin("Edu");
+  Mi_tel.setTimeout(20);
+  Serial.begin(9600);
+  pinMode(32,OUTPUT);
+}
+
+void loop() {
+  if(Mi_tel.available()){
+    String mensaje= Mi_tel.readStringUntil('\n');
+    mensaje.trim();
+    if(mensaje == "OFF"){
+      digitalWrite(32,1);
+    }
+    if(mensaje == "ON"){
+      digitalWrite(32,0);
+    }
+  }
+}
+```
+
+### 6.3 Observaciones
+
+- El nombre del dispositivo Bluetooth se define en `Mi_tel.begin("Edu")`; puede cambiarse por el que se prefiera.
+- Es necesario instalar en el celular una aplicación de terminal Bluetooth (como *Serial Bluetooth Terminal*) para enviar los comandos "ON" y "OFF".
+- Se recomienda verificar la conexión física del LED: si se conecta directamente al pin 32 y a tierra, la lógica será la observada en esta práctica; si se invierte la polaridad, la lógica también deberá invertirse en el código.
 
 ### 2.2 Evidencia audiovisual
 
-[Video 2: Demostración de conexión inalámbrica y control por Bluetooth](https://www.youtube.com/embed/1JN5oAWgr-M)
+[Video 2: Demostración de conexión intercalando leds](https://www.youtube.com/embed/1JN5oAWgr-M)
 
 ### 2.3 Evidencia fotográfica
 
 ![Montaje en protoboard](../recursos/imgs/blo.jpg)
-![LED parpadeando](../recursos/imgs/blo1.jpg)
 
-*Figura 2. Montaje en protoboard y LED parpadeando.*
+*Figura 2. Montaje en protoboard*
 
 ---
 
