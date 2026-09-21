@@ -241,10 +241,51 @@ void loop() {
 }
 ```
 
-### 3.2 Evidencia fotográfica
+### 4.3 Evidencia fotográfica
 
 ![Montaje del motor DC en protoboard](../recursos/imgs/DC.jpg)
 *Figura 3. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio*
 
 ![Montaje completo](../recursos/imgs/circuito.png)
 *Figura 3. Ensamble completo de los dos motores DC y un servo.*
+
+## 5. Sesión 5: Mecanismos 
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Fecha** | 18 de septiembre del 2026 |
+| **Autora** | Carmen Leyva López |
+| **Asignatura** | Introducción a la mecatrónica |
+
+### 5.1 Descripción
+
+Los motores DC giran rápido y con poca fuerza. Por eso los mecanismos permiten adaptar ese movimiento: sacrifican velocidad para ganar fuerza, o cambian el tipo de movimiento.
+
+### 7.2 Conceptos clave
+
+- **Palancas:** la ventaja mecánica depende de los brazos. Hay tres clases según la posición del fulcro.
+- **Biela-manivela:** convierte rotación en traslación (y viceversa). La velocidad del extremo no es constante.
+
+Fórmula:
+![Formula](../recursos/imgs/fórmula.png)
+
+
+### 5.3 Taller
+
+Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el mecanismo a mano, observamos y llenamos la ficha.
+
+### Tabla:
+| Estación | ¿Qué hace? | Relación *i* (más o menos) | ¿Se puede regresar o se traba? | ¿Dónde lo ves en la vida real? | ¿Para qué te sirve en el carro o en un proyecto? |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **A · Diferencial** | Hace que las ruedas de un mismo eje giren a velocidades distintas al dar vuelta. | No es fija (1:1 en línea recta). | Se puede regresar (si es abierto). Si tiene bloqueo, se traba. | En el eje trasero de los coches. | En el carro, para que no patinen las llantas al girar. |
+| **B · Cicloidal** | Baja muchísimo las revoluciones y te da un montón de fuerza. Es súper compacto. | Alta (de 1:10 para arriba). | Se traba (no se puede regresar). | En brazos de robots industriales o máquinas CNC. | Para un brazo robótico o una base que gire con precisión. |
+| **C · Cardán** | Pasa el giro entre dos ejes que no están alineados (hay un ángulo entre ellos). | Casi 1:1, pero no va parejo (da tirones). | Se puede regresar. | En el tubo de transmisión de camiones o autos con tracción trasera. | Para conectar el motor a las ruedas si están en ejes separados. |
+| **D · Obturador** | Abre y cierra el paso de algo (como la luz) de forma intermitente. | No aplica (se mide por tiempo). | Se puede abrir y cerrar. | En las cámaras de fotos. | Para un sistema de frenos ABS o para luces intermitentes. |
+| **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 → 1:2. | Se puede regresar. | En taladros, juguetes, casi en cualquier lado. | Para pasar el movimiento del motor a la rueda de forma simple. |
+| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce un montón en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
+
+### 5.4 Evidencia 
+
+![Mecanismos impresos en 3D](../recursos/imgs/spiral.png)
+
+*Figura 7. Estaciones con mecanismos impresos en 3D.*
