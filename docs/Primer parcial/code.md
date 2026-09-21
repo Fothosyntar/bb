@@ -84,9 +84,10 @@ Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conex
 
 Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La amplitud de la onda indica el voltaje aplicado, mientras que la distancia horizontal entre pulsos (periodo) permite calcular la frecuencia de parpadeo. El brillo del LED no se lee directamente en el osciloscopio, pero se puede inferir a partir de la corriente y del ciclo de trabajo: a mayor ciclo de trabajo o corriente, mayor intensidad luminosa.
 
-##Referencia visual:
-![Osciloscopio](../recursos/imgs/osil.png.jpg)
-![Osciloscopio2](../recursos/imgs/osil2.png.jpg)
+Referencia visual:
+
+![Osciloscopio](../recursos/imgs/osil.png)
+![Osciloscopio2](../recursos/imgs/osil2.png)
 
 ### 1.2 Evidencia audiovisual
 
