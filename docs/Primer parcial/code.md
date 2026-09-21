@@ -87,11 +87,6 @@ Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La ampli
 Referencia visual:
 
 ![Osciloscopio](../recursos/imgs/osil.png)
-![Osciloscopio2](../recursos/imgs/osili.png)
-
-### 1.2 Evidencia audiovisual
-
-[Video 1: Funcionamiento del circuito parpadeante](https://www.youtube.com/embed/1JN5oAWgr-M)
 
 ### 1.3 Evidencia fotográfica
 
@@ -141,7 +136,7 @@ void loop() {
 }
 ```
 
-### 6.3 Observaciones
+### 3.3 Observaciones
 
 - El nombre del dispositivo Bluetooth se define en `Mi_tel.begin("Edu")`; puede cambiarse por el que se prefiera.
 - Es necesario instalar en el celular una aplicación de terminal Bluetooth (como *Serial Bluetooth Terminal*) para enviar los comandos "ON" y "OFF".
@@ -149,7 +144,7 @@ void loop() {
 
 ### 2.2 Evidencia audiovisual
 
-[Video 2: Demostración de conexión intercalando leds](https://www.youtube.com/embed/1JN5oAWgr-M)
+[Video 1: Demostración de conexión intercalando leds](https://www.youtube.com/embed/1JN5oAWgr-M)
 
 ### 2.3 Evidencia fotográfica
 
