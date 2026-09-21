@@ -84,11 +84,11 @@ Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conex
 
 Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La amplitud de la onda indica el voltaje aplicado, mientras que la distancia horizontal entre pulsos (periodo) permite calcular la frecuencia de parpadeo. El brillo del LED no se lee directamente en el osciloscopio, pero se puede inferir a partir de la corriente y del ciclo de trabajo: a mayor ciclo de trabajo o corriente, mayor intensidad luminosa.
 
-Referencia visual:
+Referencia visual (intervalos cortos):
 
 ![Osciloscopio](../recursos/imgs/osil.png)
 
-### 1.3 Evidencia fotográfica
+### 1.3 Evidencia del ensamble
 
 ![Montaje en protoboard](../recursos/imgs/led1.jpg)
 ![LED parpadeando](../recursos/imgs/led2.jpg)
@@ -247,7 +247,7 @@ void loop() {
 *Figura 3. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio*
 
 ![Montaje completo](../recursos/imgs/circuito.png)
-*Figura 3. Ensamble completo de los dos motores DC y un servo.*
+*Figura 4. Ensamble completo de los dos motores DC y un servo.*
 
 ## 5. Sesión 5: Mecanismos 
 
@@ -267,8 +267,8 @@ Los motores DC giran rápido y con poca fuerza. Por eso los mecanismos permiten 
 - **Biela-manivela:** convierte rotación en traslación (y viceversa). La velocidad del extremo no es constante.
 
 Fórmula:
-![Formula](../recursos/imgs/fórmula.png)
 
+![Formula](../recursos/imgs/fórmula.png)
 
 ### 5.3 Taller
 
@@ -277,12 +277,12 @@ Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el meca
 ### Tabla:
 | Estación | ¿Qué hace? | Relación *i* (más o menos) | ¿Se puede regresar o se traba? | ¿Dónde lo ves en la vida real? | ¿Para qué te sirve en el carro o en un proyecto? |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **A · Diferencial** | Hace que las ruedas de un mismo eje giren a velocidades distintas al dar vuelta. | No es fija (1:1 en línea recta). | Se puede regresar (si es abierto). Si tiene bloqueo, se traba. | En el eje trasero de los coches. | En el carro, para que no patinen las llantas al girar. |
-| **B · Cicloidal** | Baja muchísimo las revoluciones y te da un montón de fuerza. Es súper compacto. | Alta (de 1:10 para arriba). | Se traba (no se puede regresar). | En brazos de robots industriales o máquinas CNC. | Para un brazo robótico o una base que gire con precisión. |
+| **A · Diferencial** | Hace que las ruedas de un mismo eje giren a velocidades distintas al dar vuelta. | No es fija (1:1 en línea recta). | Se puede regresar (si es abierto). Si tiene bloqueo, se traba. | En el eje trasero de los coches. | En el coche, para que no patinen las llantas al girar. |
+| **B · Cicloidal** | Baja muchísimo las revoluciones y te mucha fuerza. Es muy compacto. | Alta (de 1:10 para arriba). | Se traba (no se puede regresar). | En brazos de robots industriales o máquinas CNC. | Para un brazo robótico o una base que gire con precisión. |
 | **C · Cardán** | Pasa el giro entre dos ejes que no están alineados (hay un ángulo entre ellos). | Casi 1:1, pero no va parejo (da tirones). | Se puede regresar. | En el tubo de transmisión de camiones o autos con tracción trasera. | Para conectar el motor a las ruedas si están en ejes separados. |
 | **D · Obturador** | Abre y cierra el paso de algo (como la luz) de forma intermitente. | No aplica (se mide por tiempo). | Se puede abrir y cerrar. | En las cámaras de fotos. | Para un sistema de frenos ABS o para luces intermitentes. |
-| **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 → 1:2. | Se puede regresar. | En taladros, juguetes, casi en cualquier lado. | Para pasar el movimiento del motor a la rueda de forma simple. |
-| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce un montón en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
+| **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 → 1:2. | Se puede regresar. | En taladros, juguetes. | Para pasar el movimiento del motor a la rueda de forma simple. |
+| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce  en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
 
 ### 5.4 Evidencia 
 
