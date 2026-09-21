@@ -13,55 +13,57 @@
 >
 > Mi intención con esta bitácora es documentar los avances, retos y aprendizajes obtenidos a lo largo de la carrera.
 
-![Foto de Carmen](../recursos/imgs/me.jpg)
+<div align="center">
+  <img src="../recursos/imgs/me.jpg" alt="Foto de Carmen" width="220">
+  <br>
+  <em>Figura 1. Retrato de la autora.</em>
+</div>
 
 ---
 
-## 1.1 Inicialización del repositorio y publicación en GitHub
+## Índice
+
+1. [Inicialización del repositorio y publicación en GitHub](#1-inicialización-del-repositorio-y-publicación-en-github)
+2. [Sesión 2: Intermitencia y Capacitores](#2-sesión-2-intermitencia-y-capacitores)
+3. [Sesión 3: Conexión inalámbrica y microcontrolador ESP32](#3-sesión-3-conexión-inalámbrica-y-microcontrolador-esp32)
+4. [Sesión 4: Motor DC y Servo](#4-sesión-4-motor-dc-y-servo)
+5. [Sesión 5: Mecanismos](#5-sesión-5-mecanismos)
+
+---
+
+## 1. Inicialización del repositorio y publicación en GitHub
 
 Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde Visual Studio Code (`Terminal > Nueva terminal`), se llevan a cabo los siguientes pasos:
 
----
-
-### 1. Inicializar el repositorio local
+### 1.1 Inicializar el repositorio local
 
 ```bash
 git clone
 ```
 
----
-
-### 2. Descargar la carpeta de archivos 
+### 1.2 Descargar la carpeta de archivos
 
 ```bash
 ls
 ```
 
----
-
-### 3. Preparar todos los archivos
+### 1.3 Preparar todos los archivos
 
 ```bash
 git add .
 ```
 
----
-
-### 4. Guardar el primer commit
+### 1.4 Guardar el primer commit
 
 ```bash
 git commit -m "Primera versión de la bitácora universitaria"
 ```
 
----
-
-### 5. Subir los archivos por primera vez a GitHub
+### 1.5 Subir los archivos por primera vez a GitHub
 
 ```bash
-git push 
+git push
 ```
-
----
 
 > **Nota:**  
 > Antes de ejecutar el paso 5, asegúrate de haber creado el repositorio remoto en GitHub y de haberlo vinculado con:
@@ -70,7 +72,9 @@ git push
 > git remote add origin https://github.com/tu-usuario/tu-repositorio.git
 > ```
 
-## 1. Sesión 2: Intermitencia y Capacitores
+---
+
+## 2. Sesión 2: Intermitencia y Capacitores
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -78,26 +82,32 @@ git push
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
 
-### 1.1 Descripción
+### 2.1 Descripción
 
 Durante esta sesión, ensamblamos el circuito basándonos en el esquema de conexión del LM3909. Evaluamos cómo la variación en voltaje afecta directamente el tiempo de parpadeo y, por consiguiente, la intensidad de luz del led.
 
 Usamos el osciloscopio para registrar el voltaje y el parpadeo del LED. La amplitud de la onda indica el voltaje aplicado, mientras que la distancia horizontal entre pulsos (periodo) permite calcular la frecuencia de parpadeo. El brillo del LED no se lee directamente en el osciloscopio, pero se puede inferir a partir de la corriente y del ciclo de trabajo: a mayor ciclo de trabajo o corriente, mayor intensidad luminosa.
 
-Referencia visual (intervalos cortos):
+### 2.2 Referencia visual (intervalos cortos)
 
-![Osciloscopio](../recursos/imgs/osil.png)
+<div align="center">
+  <img src="../recursos/imgs/osil.png" alt="Osciloscopio" width="400">
+  <br>
+  <em>Figura 2. Registro del osciloscopio.</em>
+</div>
 
-### 1.3 Evidencia del ensamble
+### 2.3 Evidencia del ensamble
 
-![Montaje en protoboard](../recursos/imgs/led1.jpg)
-![LED parpadeando](../recursos/imgs/led2.jpg)
-
-*Figura 1. Montaje en protoboard y LED parpadeando.*
+<div align="center">
+  <img src="../recursos/imgs/led1.jpg" alt="Montaje en protoboard" width="250">
+  <img src="../recursos/imgs/led2.jpg" alt="LED parpadeando" width="250">
+  <br>
+  <em>Figura 3. Montaje en protoboard y LED parpadeando.</em>
+</div>
 
 ---
 
-## 2. Sesión 3: Conexión inalámbrica y microcontrolador ESP32
+## 3. Sesión 3: Conexión inalámbrica y microcontrolador ESP32
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -105,7 +115,7 @@ Referencia visual (intervalos cortos):
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
 
-### 3.2 Código utilizado
+### 3.1 Código utilizado
 
 ```cpp
 #include <BTAddress.h>
@@ -136,25 +146,31 @@ void loop() {
 }
 ```
 
-### 3.3 Observaciones
+### 3.2 Observaciones
 
-- El nombre del dispositivo Bluetooth se define en `Mi_tel.begin("Edu")`; puede cambiarse por el que se prefiera.
-- Es necesario instalar en el celular una aplicación de terminal Bluetooth (como *Serial Bluetooth Terminal*) para enviar los comandos "ON" y "OFF".
-- Se recomienda verificar la conexión física del LED: si se conecta directamente al pin 32 y a tierra, la lógica será la observada en esta práctica; si se invierte la polaridad, la lógica también deberá invertirse en el código.
+1. **Nombre del dispositivo Bluetooth:** se define en `Mi_tel.begin("Edu")`; puede cambiarse por el que se prefiera.
+2. **Aplicación móvil requerida:** es necesario instalar en el celular una aplicación de terminal Bluetooth (como *Serial Bluetooth Terminal*) para enviar los comandos "ON" y "OFF".
+3. **Verificación de la conexión física del LED:** si se conecta directamente al pin 32 y a tierra, la lógica será la observada en esta práctica; si se invierte la polaridad, la lógica también deberá invertirse en el código.
 
-### 2.2 Evidencia audiovisual
+### 3.3 Evidencia audiovisual
 
-[Video 1: Demostración de conexión intercalando leds](https://www.youtube.com/embed/1JN5oAWgr-M)
+<div align="center">
+  <a href="https://www.youtube.com/embed/1JN5oAWgr-M" target="_blank">
+    <strong>🎥 Video 1: Demostración de conexión intercalando leds</strong>
+  </a>
+</div>
 
-### 2.3 Evidencia fotográfica
+### 3.4 Evidencia fotográfica
 
-![Montaje en protoboard](../recursos/imgs/blo.jpg)
-
-*Figura 2. Montaje en protoboard*
+<div align="center">
+  <img src="../recursos/imgs/blo.jpg" alt="Montaje en protoboard" width="300">
+  <br>
+  <em>Figura 4. Montaje en protoboard.</em>
+</div>
 
 ---
 
-## 3. Sesión 4: Motor DC y Servo
+## 4. Sesión 4: Motor DC y Servo
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -162,7 +178,7 @@ void loop() {
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
 
-### 3.1 Descripción
+### 4.1 Descripción
 
 En esta sesión programamos el control de un robot con dos motores DC y un servomotor usando Arduino. Los motores DC se manejan a través de un puente H (L293D/L298N), usando los pines 6 y 7 para el primer motor y los pines 3 y 4 para el segundo. Los pines 5 y 2 se configuran como habilitadores y se colocan en `HIGH` para permitir el giro de los motores. El servomotor se conecta al pin 9 y se controla con la librería `Servo.h`.
 
@@ -243,13 +259,21 @@ void loop() {
 
 ### 4.3 Evidencia fotográfica
 
-![Montaje del motor DC en protoboard](../recursos/imgs/DC.jpg)
-*Figura 3. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio*
+<div align="center">
+  <img src="../recursos/imgs/DC.jpg" alt="Montaje del motor DC en protoboard" width="300">
+  <br>
+  <em>Figura 5. Aquí probamos el puente L293D y como consumia corriente con el osciloscopio.</em>
+</div>
 
-![Montaje completo](../recursos/imgs/circuito.png)
-*Figura 4. Ensamble completo de los dos motores DC y un servo.*
+<div align="center">
+  <img src="../recursos/imgs/circuito.png" alt="Montaje completo" width="400">
+  <br>
+  <em>Figura 6. Ensamble completo de los dos motores DC y un servo.</em>
+</div>
 
-## 5. Sesión 5: Mecanismos 
+---
+
+## 5. Sesión 5: Mecanismos
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -261,20 +285,23 @@ void loop() {
 
 Los motores DC giran rápido y con poca fuerza. Por eso los mecanismos permiten adaptar ese movimiento: sacrifican velocidad para ganar fuerza, o cambian el tipo de movimiento.
 
-### 7.2 Conceptos clave
+### 5.2 Conceptos clave
 
-- **Palancas:** la ventaja mecánica depende de los brazos. Hay tres clases según la posición del fulcro.
-- **Biela-manivela:** convierte rotación en traslación (y viceversa). La velocidad del extremo no es constante.
+1. **Palancas:** la ventaja mecánica depende de los brazos. Hay tres clases según la posición del fulcro.
+2. **Biela-manivela:** convierte rotación en traslación (y viceversa). La velocidad del extremo no es constante.
 
-Fórmula:
+**Fórmula:**
 
-![Formula](../recursos/imgs/fórmula.png)
+<div align="center">
+  <img src="../recursos/imgs/fórmula.png" alt="Fórmula" width="300">
+</div>
 
 ### 5.3 Taller
 
 Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el mecanismo a mano, observamos y llenamos la ficha.
 
-### Tabla:
+**Tabla de estaciones:**
+
 | Estación | ¿Qué hace? | Relación *i* (más o menos) | ¿Se puede regresar o se traba? | ¿Dónde lo ves en la vida real? | ¿Para qué te sirve en el carro o en un proyecto? |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **A · Diferencial** | Hace que las ruedas de un mismo eje giren a velocidades distintas al dar vuelta. | No es fija (1:1 en línea recta). | Se puede regresar (si es abierto). Si tiene bloqueo, se traba. | En el eje trasero de los coches. | En el coche, para que no patinen las llantas al girar. |
@@ -282,10 +309,27 @@ Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el meca
 | **C · Cardán** | Pasa el giro entre dos ejes que no están alineados (hay un ángulo entre ellos). | Casi 1:1, pero no va parejo (da tirones). | Se puede regresar. | En el tubo de transmisión de camiones o autos con tracción trasera. | Para conectar el motor a las ruedas si están en ejes separados. |
 | **D · Obturador** | Abre y cierra el paso de algo (como la luz) de forma intermitente. | No aplica (se mide por tiempo). | Se puede abrir y cerrar. | En las cámaras de fotos. | Para un sistema de frenos ABS o para luces intermitentes. |
 | **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 → 1:2. | Se puede regresar. | En taladros, juguetes. | Para pasar el movimiento del motor a la rueda de forma simple. |
-| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce  en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
+| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
 
-### 5.4 Evidencia 
+### 5.4 Evidencia
 
-![Mecanismos impresos en 3D](../recursos/imgs/spiral.png)
+<div align="center">
+  <img src="../recursos/imgs/spiral.png" alt="Mecanismos impresos en 3D" width="400">
+  <br>
+  <em>Figura 7. Estaciones con mecanismos impresos en 3D.</em>
+</div>
 
-*Figura 7. Estaciones con mecanismos impresos en 3D.*
+---
+```
+
+---
+
+## 📋 Cambios de organización aplicados a las viñetas
+
+| Sección | Antes | Después |
+|:---|:---|:---|
+| **3.2 Observaciones** | 3 viñetas con `-` sin jerarquía | **Lista numerada** con **título en negrita** por cada punto, facilitando la lectura y referencia |
+| **5.2 Conceptos clave** | 2 viñetas con `-` | **Lista numerada** para darles orden secuencial explícito |
+| **Tabla 5.3** | Filas sin agrupación visual | Encabezados en negrita + columnas alineadas (ya estaban bien, se mantiene) |
+| **Índice** | Ausente en versiones previas | Añadido con enlaces internos |
+| **Jerarquía numérica** | Saltos (`7.2`, `3.1` en sesión 4, etc.) | Reenumerada secuencialmente por sesión |
