@@ -16,7 +16,8 @@
 ![Foto de Carmen](../recursos/imgs/me.jpg)
 
 ---
-# 1.1 Inicialización del repositorio y publicación en GitHub
+
+## 1.1 Inicialización del repositorio y publicación en GitHub
 
 Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde Visual Studio Code (`Terminal > Nueva terminal`), se llevan a cabo los siguientes pasos:
 
@@ -24,38 +25,50 @@ Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde
 
 ### 1. Inicializar el repositorio local
 
-    git init
+```bash
+git init
+```
 
 ---
 
 ### 2. Cambiar la rama principal a `main`
 
-    git branch -M main
+```bash
+git branch -M main
+```
 
 ---
 
 ### 3. Preparar todos los archivos
 
-    git add .
+```bash
+git add .
+```
 
 ---
 
 ### 4. Guardar el primer commit
 
-    git commit -m "Primera versión de la bitácora universitaria"
+```bash
+git commit -m "Primera versión de la bitácora universitaria"
+```
 
 ---
 
 ### 5. Subir los archivos por primera vez a GitHub
 
-    git push -u origin main
+```bash
+git push -u origin main
+```
 
 ---
 
-!!! note "Nota"
-    Antes de ejecutar el paso 5, asegúrate de haber creado el repositorio remoto en GitHub y de haberlo vinculado con:
-
-        git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+> **Nota:**  
+> Antes de ejecutar el paso 5, asegúrate de haber creado el repositorio remoto en GitHub y de haberlo vinculado con:
+>
+> ```bash
+> git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+> ```
 
 ## 1. Sesión 2: Intermitencia y Capacitores
 
