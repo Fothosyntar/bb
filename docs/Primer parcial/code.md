@@ -368,23 +368,142 @@ Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el meca
 | **B · Cicloidal** | Baja muchísimo las revoluciones y te mucha fuerza. Es muy compacto. | Alta (de 1:10 para arriba). | Se traba (no se puede regresar). | En brazos de robots industriales o máquinas CNC. | Para un brazo robótico o una base que gire con precisión. |
 | **C · Cardán** | Pasa el giro entre dos ejes que no están alineados (hay un ángulo entre ellos). | Casi 1:1, pero no va parejo (da tirones). | Se puede regresar. | En el tubo de transmisión de camiones o autos con tracción trasera. | Para conectar el motor a las ruedas si están en ejes separados. |
 | **D · Obturador** | Abre y cierra el paso de algo (como la luz) de forma intermitente. | No aplica (se mide por tiempo). | Se puede abrir y cerrar. | En las cámaras de fotos. | Para un sistema de frenos ABS o para luces intermitentes. |
-| **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 → 1:2. | Se puede regresar. | En taladros, juguetes. | Para pasar el movimiento del motor a la rueda de forma simple. |
-| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce  en un solo paso. | Ej: 1 entrada a 40 dientes → 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
+| **E1 · Engranes rectos** | Pasa velocidad y fuerza entre ejes que van en paralelo. | Ej: 20 dientes a 40 1:2. | Se puede regresar. | En taladros, juguetes. | Para pasar el movimiento del motor a la rueda de forma simple. |
+| **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce  en un solo paso. | Ej: 1 entrada a 40 dientes 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
 
 
 ### 5.4 Evidencia
 
 
-![Mecanismos impresos en 3D](../recursos/imgs/spiral.png)
 
+## A · Diferencial
 
-*Figura 7. Estaciones con mecanismos impresos en 3D.*
+![diferencial](../recursos/imgs/funcion-diferencial-de-un-auto.jpg)
+Nota. Adaptado [o Reutilizado] de Conoce tu vehículo: función del diferencial de un auto [Fotografía], por Derco Chile, s.f., Derco (https://www.derco.cl/noticias/conoce-tu-vehiculo-funcion-del-diferencial-de-un-auto). En el dominio público [o Derechos de autor [Año] por Derco].
+
+## Estación B · Reductor cicloidal
+![reductor](../recursos/imgs/reductor_c.jpeg)
+
+## Estación C · Junta cardán (universal)
+![Junta cardan](../recursos/imgs/j_cardan.jpeg)
+
+## Estación D · Obturador de láminas (leaf shutter)
+![obturador](../recursos/imgs/obturados_l.jpeg)
+
+## Estación E1 · Transformar el movimiento
+![t_mov](../recursos/imgs/trans.jpeg)
+![t_mov](../recursos/imgs/spiral.jpeg)
+
+## Estación E2 · Redirigir y reducir
+![t2_mov](../recursos/imgs/bevel.jpeg)
+![t2_mov](../recursos/imgs/worm_e.jpeg)
+
 
 ## Sesión 6: Visión y color
-
-
 | Campo | Detalle |
 | :--- | :--- |
 | **Fecha** | 2 de octubre del 2026 |
 | **Autora** | Carmen Leyva López |
 | **Asignatura** | Introducción a la mecatrónica |
+
+```ccp
+
+import cv2
+import numpy as np
+cap = cv2.VideoCapture(0)  # prueba 0/1/2 si tienes varias cámaras
+if not cap.isOpened():
+    raise RuntimeError("No se pudo abrir la cámara")
+ 
+# Opcional: fija resolución (si la cámara lo permite)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+ 
+while True:
+    ok, frame = cap.read()
+    if not ok:
+        break
+ 
+ 
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    low  = np.array([20,  120,  120], dtype=np.uint8)
+    high = np.array([35, 255, 255], dtype=np.uint8)
+    filtro = cv2.inRange(hsv, low, high)
+ 
+    filtrada=cv2.bitwise_and(frame,frame, mask=filtro)
+    cv2.imshow("mask",filtro)
+    cv2.imshow("original", frame)
+    cv2.imshow("hsv", filtrada)
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # presiona 'q' para salir
+     break
+ 
+ 
+cap.release()
+cv2.destroyAllWindows()
+ 
+import cv2
+import numpy as np
+cap = cv2.VideoCapture(0)  # prueba 0/1/2 si tienes varias cámaras
+if not cap.isOpened():
+    raise RuntimeError("No se pudo abrir la cámara")
+ 
+# Opcional: fija resolución (si la cámara lo permite)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+ 
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
+ 
+while True:
+    ok, frame = cap.read()
+    if not ok:
+        break
+ 
+ 
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    low  = np.array([20,  120,  120], dtype=np.uint8)
+    high = np.array([35, 255, 255], dtype=np.uint8)
+    filtro = cv2.inRange(hsv, low, high)
+    erosion = cv2.dilate(filtro, kernel, iterations=2)  
+    erosion = cv2.erode(erosion, kernel, iterations=2)  
+    filtrada=cv2.bitwise_and(frame,frame, mask=filtro)
+    contours, _ = cv2.findContours(erosion, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.imshow("mask",filtro)
+    cv2.imshow("erosion",erosion)
+    cv2.imshow("original", frame)
+   
+ 
+    for c in contours:
+        area = cv2.contourArea(c)
+        if area < 200:  # filtra ruido muy pequeño
+            continue
+ 
+        # Dibujo del contorno:
+        cv2.drawContours(filtrada, [c], -1, (0,255,0), 2)
+ 
+        # Rectángulo axis-aligned:
+        x, y, w, h = cv2.boundingRect(c)
+        cv2.rectangle(filtrada, (x,y), (x+w, y+h), (255,0,0), 2)
+ 
+        # Círculo mínimo envolvente:
+        (cx, cy), rad = cv2.minEnclosingCircle(c)
+        cv2.circle(filtrada, (int(cx), int(cy)), int(rad), (0,255,255), 2)
+ 
+        # Centroides con momentos:
+        M = cv2.moments(c)
+        if M["m00"] != 0:
+            cx_m = int(M["m10"] / M["m00"])
+            cy_m = int(M["m01"] / M["m00"])
+            cv2.circle(filtrada, (cx_m, cy_m), 4, (0,0,255), -1)
+            cv2.putText(filtrada, f"({cx_m},{cy_m})", (cx_m+6, cy_m-6),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 1)
+    cv2.imshow("hsv", filtrada)
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # presiona 'q' para salir
+     break
+ 
+ 
+cap.release()
+cv2.destroyAllWindows()
+ 
+ 
+```
