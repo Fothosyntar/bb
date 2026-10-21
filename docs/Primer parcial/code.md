@@ -157,7 +157,7 @@ En está práctica aprendimos a usar el micro controlador ESP32 y a conectarlo v
 ### 2.2 Código utilizado
 
 
-```cpp
+```c++
 #include <BTAddress.h>
 #include <BTAdvertisedDevice.h>
 #include <BTScan.h>
@@ -230,7 +230,7 @@ Definimos cuatro funciones (`adelante()`, `atras()`, `der()` e `izq()`) que esta
 ### 3.2 Código utilizado
 
 
-```cpp
+```c++
 // Incluye la librería para controlar servomotores
 #include <Servo.h>
 
@@ -468,7 +468,8 @@ Para cada objeto detectado dibuja:
 Las coordenadas del centro sirven para saber dónde está el objeto.
 
 ## Código: 
-```python
+
+```py
 import cv2
 import numpy as np
 
