@@ -1,10 +1,9 @@
 # Proyecto primer parcial
 
-**Autores:** Carmen Leyva López, (escribe tu nombre)  
+
 **Asignatura:** Introducción a la Mecatrónica  
 **Periodo:** Septiembre – Octubre 2026
 
-En la sesión 
 
 Lista de componentes
 ------------------------------------------------------------
@@ -18,6 +17,8 @@ siguiente lista de componentes:
 - Una protoboard mediana
 - Un interruptor chico
 - Power bank con cargador tipo c
+- Rueda loca
+- Filamento PLA 
 
 ![Carrito](../recursos/imgs/carrito1.jpeg)
 
