@@ -565,7 +565,7 @@ cap.release()
 cv2.destroyAllWindows()
 
 ```
-------------------------------------------------------------
+
 Conclusión
 ------------------------------------------------------------
 Usar HSV es buena idea para detectar colores.

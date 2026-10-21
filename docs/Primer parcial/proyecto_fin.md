@@ -17,6 +17,9 @@ siguiente lista de componentes:
 - Cables calibre 22
 - Una protoboard mediana
 - Un interruptor chico
+- Power bank con cargador tipo c
+
+![Carrito](../recursos/imgs/carrito1.jpeg)
 
 ------------------------------------------------------------
 Primer paso: soldar los pines del puente H y probarlo
@@ -335,3 +338,101 @@ map(nivel, 1, 9, VEL_MIN, VEL_MAX)
   entre 80 y 255.
 
 ------------------------------------------------------------
+Migración a BT Car Controller 
+-----------------------------------------------------
+Después de probar varias apps de uso libre para maniobrar
+los motores, se dejó el Serial Bluetooth Terminal (que vimos en clase) y me pasamos a BT Car Controller, que ya trae una
+interfaz de carrito prediseñada. Solo ajustamos el código anterior a los comandos que mandan los botones de
+esa app.
+
+Además del segundo motor, se añadió giros y velocidades preestablecidas.
+
+## Pines del driver TB6612FNG
+
+Motor A:  AIN1=26  AIN2=27  PWMA=25
+
+Motor B:  BIN1=14  BIN2=4   PWMB=13
+
+Driver:   STBY=33
+
+------------------------------------------------------------
+Comandos que acepta
+------------------------------------------------------------
+
+Velocidades preestablecidas:
+v  → baja        (120)
+u  → media-baja  (160)
+U  → media-alta  (200)
+V  → alta        (230)
+
+Mayúscula o minúscula da igual para F, B, L, R, S, pero
+v, u, U y V sí distinguen mayúscula de minúscula, porque
+son cuatro niveles distintos.
+
+------------------------------------------------------------
+Cómo funcionan los giros
+------------------------------------------------------------
+Un giro se logra girando los motores en sentidos opuestos: un motor va hacia adelante y el otro hacia atrás.
+
+Giro izquierda:  Motor A atrás,  Motor B adelante.
+Giro derecha:    Motor A adelante, Motor B atrás.
+
+Así el robot gira sobre su propio eje, sin avanzar.
+
+------------------------------------------------------------
+Partes importantes del código
+------------------------------------------------------------
+```bash
+String buffer
+```
+  Guarda las letras que llegan por Bluetooth hasta que
+  aparece un salto de línea, entonces procesa el comando.
+
+```bash
+toupper(c)
+```
+  Convierte el primer carácter a mayúscula para que
+  F/f, B/b, L/l, R/r y S/s hagan lo mismo.
+
+```bash
+c == 'v', 'u', 'U', 'V'
+```
+  Se revisan antes del switch porque son sensibles a
+  mayúscula y minúscula (cuatro velocidades distintas).
+
+```bash
+switch (cUpper)
+```
+  Decide la acción: F, B, L, R, S, +, - o número.
+
+```bash
+map(nivel, 1, 9, VEL_MIN, VEL_MAX)
+```
+  Convierte un número del 1 al 9 en velocidad real
+  (entre 80 y 255).
+```bash
+ledcWrite(PWMA, velocidad) y ledcWrite(PWMB, velocidad)
+```
+  Mandan la misma velocidad a los dos motores.
+
+```bash
+actualizarVelocidad()
+```
+  Si los motores ya están girando, aplica la nueva
+  velocidad en vivo, sin volver a mandar F o B.
+
+### Evidencia visual: ensamble y funcionamiento por Bluetooth
+
+**1. Ensamble del circuito**
+
+[![Ver video en YouTube](https://img.youtube.com/vi/ALRvett38yY/hqdefault.jpg)](https://youtube.com/shorts/ALRvett38yY)
+
+Conexiones del puente H TB6612FNG, los dos motores amarillos, el ESP32 y el interruptor, montados en protoboard mediana con cables calibre 22.
+
+![Carrito_ensable](../recursos/imgs/foto_ensamble.jpeg)
+
+**2. Funcionamiento del carrito**
+
+[![Ver video en YouTube](https://img.youtube.com/vi/irYSzvaylEM/hqdefault.jpg)](https://youtube.com/shorts/irYSzvaylEM)
+
+Prueba del carrito controlado desde el celular con la interfaz de BT Car Controller.
