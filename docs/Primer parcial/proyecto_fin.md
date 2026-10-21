@@ -5,3 +5,4 @@
 **Periodo:** Septiembre – Octubre 2026
 
 Para comenzar a trabajar en nuestro proyecto comenzamos con está lista de componentes: 
+.
