@@ -468,7 +468,7 @@ Para cada objeto detectado dibuja:
 Las coordenadas del centro sirven para saber dónde está el objeto.
 
 ## Código: 
-```ccp
+```python
 import cv2
 import numpy as np
 
