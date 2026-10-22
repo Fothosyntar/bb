@@ -142,6 +142,11 @@ Observaciones
 ------------------------------------------------------------
 Segundo paso: probar conexión vía bluetooth y buscar un joystick adecuado
 ------------------------------------------------------------
+escribe
+
+------------------------------------------------------------
+Tercer paso: probar conexión vía bluetooth y buscar un joystick adecuado
+------------------------------------------------------------
 Código bluetooth:
 
 ```c++
