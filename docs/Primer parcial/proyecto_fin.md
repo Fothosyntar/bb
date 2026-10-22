@@ -140,9 +140,11 @@ Observaciones
 [![Ver video en YouTube](https://img.youtube.com/vi/h693ElG9Kuk/0.jpg)](https://www.youtube.com/watch?v=h693ElG9Kuk)
 
 ------------------------------------------------------------
-Segundo paso: probar conexión vía bluetooth y buscar un joystick adecuado
+Segundo paso: Impresión 3D y diseño de la carcasa
 ------------------------------------------------------------
-escribe
+Para el diseño de la carcasa de tomaron las medidas directamente de los motores con reducción y se diseño unos adapadores y la base en solid works, para después pasar el archivo STL a código G. La impresión toma alrededor de 4-6 horas dependiendo de la dificultad y los parámetros establecidos en el programa. 
+
+![Carrito_ensable](../recursos/imgs/carcasa.jpeg)
 
 ------------------------------------------------------------
 Tercer paso: probar conexión vía bluetooth y buscar un joystick adecuado
