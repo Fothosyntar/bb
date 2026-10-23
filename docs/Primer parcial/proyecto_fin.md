@@ -144,6 +144,20 @@ Segundo paso: Impresión 3D y diseño de la carcasa
 ------------------------------------------------------------
 Para el diseño de la carcasa de tomaron las medidas directamente de los motores con reducción y se diseño unos adapadores y la base en solid works, para después pasar el archivo STL a código G. La impresión toma alrededor de 4-6 horas dependiendo de la dificultad y los parámetros establecidos en el programa. 
 
+## Proceso: Diseño y fabricación de la carcasa 
+
+El desarrollo y fabricación de la carcasa para proteger el circuito y la estructura del carrito fue un proceso de prueba y error, pasando por múltiples intentos y cambios de estrategia hasta alcanzar el resultado deseado. 
+
+Cómo lo hicimos: 
+
+Intentamos primero realizar la fabricación mediante corte láser, pero fallamos tres veces consecutivas en los cálculos de medidas y diseño, por lo que decidimos cambiar de enfoque hacia la impresión 3D. 
+
+El modelo inicial diseñado para impresión 3D también falló imprimimos una casa de Snoopy que no logro cumplir con el criterio esperado, pero este aprendizaje nos sirvió para dominar correctamente la parametrización y el modelado 3D. 
+
+Tras ajustar los parámetros, logramos un diseño final cuyas medidas resultaron exactas, permitiendo que la carcasa embonara y entrara a presión de forma perfecta sobre el chasis y la protoboard. 
+
+Finalmente, realizamos la decoración del carrito en equipo para darle el acabado visual definitivo y listo para operar. 
+
 ![Carrito_ensable](../recursos/imgs/carcasa.jpeg)
 
 ------------------------------------------------------------
@@ -444,3 +458,5 @@ Conexiones del puente H TB6612FNG, los dos motores amarillos, el ESP32 y el inte
 [![Ver video en YouTube](https://img.youtube.com/vi/irYSzvaylEM/hqdefault.jpg)](https://youtube.com/shorts/irYSzvaylEM)
 
 Prueba del carrito controlado desde el celular con la interfaz de BT Car Controller.
+
+
