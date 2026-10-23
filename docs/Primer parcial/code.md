@@ -354,7 +354,7 @@ Fórmula:
 
 ![Formula](../recursos/imgs/fórmula.png)
 
-La fórmula solo te dice que el tamaño, la velocidad y la fuerza están conectados.
+La fórmula te dice que el tamaño, la velocidad y la fuerza están conectados.
 
 - Si pones un engranaje grande para que las cosas giren lento, tendrás mucha fuerza.
 
