@@ -24,7 +24,7 @@
 ---
 
 
-## Inicialización del repositorio y publicación en GitHub
+## 0. Inicialización del repositorio y publicación en GitHub
 
 
 Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde Visual Studio Code (`Terminal > Nueva terminal`), se llevan a cabo los siguientes pasos:
@@ -33,7 +33,7 @@ Para registrar la bitácora en Git por primera vez y vincularla con GitHub desde
 ---
 
 
-### 1. Inicializar el repositorio local
+### 0.1 Inicializar el repositorio local
 
 
 ```bash
@@ -44,7 +44,7 @@ git clone
 ---
 
 
-### 2. Descargar la carpeta de archivos
+### 0.2 Descargar la carpeta de archivos
 
 
 ```bash
@@ -53,11 +53,11 @@ ls
 
 
 ---
-### 2.1 Abrir la carpeta
+### 0.2.1 Abrir la carpeta
 Preparar el código en visual estudio code, en formato md. 
 
 
-### 3. Preparar todos los archivos
+### 0.3 Preparar todos los archivos
 
 
 ```bash
@@ -68,7 +68,7 @@ git add .
 ---
 
 
-### 4. Guardar el primer commit
+### 0.4 Guardar el primer commit
 
 
 ```bash
@@ -79,7 +79,7 @@ git commit -m "Primera versión de la bitácora universitaria"
 ---
 
 
-### 5. Subir los archivos por primera vez a GitHub
+### 0.5 Subir los archivos por primera vez a GitHub
 
 
 ```bash
@@ -354,6 +354,12 @@ Fórmula:
 
 ![Formula](../recursos/imgs/fórmula.png)
 
+La fórmula solo te dice que el tamaño, la velocidad y la fuerza están conectados.
+
+- Si pones un engranaje grande para que las cosas giren lento, tendrás mucha fuerza.
+
+- Si pones un engranaje pequeño para que giren rápido, tendrás poca fuerza.
+
 
 ### 4.3 Taller
 
@@ -372,7 +378,7 @@ Recorrimos estaciones con mecanismos impresos en 3D. En cada una movimos el meca
 | **E2 · Tornillo sinfín** | Hace un giro de 90° y reduce  en un solo paso. | Ej: 1 entrada a 40 dientes 1:40. | Se traba (no se puede regresar). | En grúas o sillas de ruedas. | Para un sistema de elevación que no se caiga solo cuando apagues el motor. |
 
 
-### 4.4 Evidencia
+### 4.4 Evidencia 
 
 
 
