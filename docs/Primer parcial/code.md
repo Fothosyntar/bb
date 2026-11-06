@@ -5,7 +5,6 @@
 **Asignatura:** Introducción a la Mecatrónica  
 **Periodo:** Agosto – Septiembre 2026
 
-
 ---
 
 
@@ -347,8 +346,6 @@ Los motores DC giran rápido y con poca fuerza. Por eso los mecanismos permiten 
 
 - **Palancas:** la ventaja mecánica depende de los brazos, más longitud = más fuerza. 
 - **Biela-manivela:** convierte rotación en traslación (y viceversa). La velocidad del extremo no es constante.
-
-
 Fórmula:
 
 
@@ -403,5 +400,3 @@ Nota. Adaptado [o Reutilizado] de Conoce tu vehículo: función del diferencial 
 ## Estación E2 · Redirigir y reducir
 ![t2_mov](../recursos/imgs/bevel.jpeg)
 ![t2_mov](../recursos/imgs/worm_e.jpeg)
-
-
