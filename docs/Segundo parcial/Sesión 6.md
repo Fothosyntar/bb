@@ -1,6 +1,4 @@
-# Bitácora Universitaria: Ingeniería Mecatrónica
-
-## 5. Sesión 6: Visión y color
+## Sesión 6: Visión y color
 | Campo | Detalle |
 | :--- | :--- |
 | **Fecha** | 2 de octubre del 2026 |
