@@ -1,3 +1,5 @@
+# Bitácora Universitaria: Ingeniería Mecatrónica
+
 ## 5. Sesión 6: Visión y color
 | Campo | Detalle |
 | :--- | :--- |
