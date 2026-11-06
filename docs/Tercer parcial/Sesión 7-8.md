@@ -36,8 +36,8 @@ El término PID proviene de las siglas de sus tres componentes:
 
 **Cómo se ajusta:**
 
-- Al aumentar $K_p$, el sistema reacciona con mayor rapidez e intensidad.
-- Sin embargo, un $K_p$ excesivo puede generar oscilaciones o llevar al sistema a la inestabilidad.
+- Al aumentar K_p, el sistema reacciona con mayor rapidez e intensidad.
+- Sin embargo, un K_p excesivo puede generar oscilaciones o llevar al sistema a la inestabilidad.
 
 **Ejemplo:** Si deseas que un motor gire a 1000 rpm y actualmente está a 500 rpm (un error de 500), el controlador aplicará un PWM alto. En cambio, si ya está a 950 rpm (un error de 50), el PWM enviado será menor.
 
@@ -57,10 +57,10 @@ El término PID proviene de las siglas de sus tres componentes:
 
 **Cómo se ajusta:**
 
-- Aporta "memoria" al sistema al recordar los errores pasados.
+- Aporta memoria al sistema al recordar los errores pasados.
 - Es clave para eliminar el error residual que el componente P deja atrás.
 
-**Riesgos de un $K_i$ alto:**
+**Riesgos de un K_i alto:**
 - El sistema puede volverse lento en su corrección.
 - Puede generar un **sobreimpulso** (*overshoot*), pasando ampliamente de la referencia antes de estabilizarse.
 - El integrador puede **saturarse** (*windup*), creciendo a valores excesivos que retrasan la respuesta del sistema.
@@ -281,4 +281,4 @@ La consola muestra en tiempo real los valores de Vx y Vy (velocidades calculadas
 Figura 4: Salida de datos en la terminal mostrando el cálculo del PID.
 
 ## 5. Conclusiones
-En esta sesión logramos integrar la visión por computadora con el control de movimiento. El código permite no solo "ver" el marcador, sino "entender" dónde está respecto a la meta y calcular las acciones necesarias para corregir su posición. El ajuste fino de las ganancias PID es crucial para que el movimiento sea suave y preciso, evitando oscilaciones o respuestas lentas.
+En esta sesión logramos integrar la visión por computadora con el control de movimiento. El código permite no solo ver el marcador, sino entender dónde está respecto a la meta y calcular las acciones necesarias para corregir su posición. El ajuste fino de las ganancias PID es crucial para que el movimiento sea suave y preciso, evitando oscilaciones o respuestas lentas.
